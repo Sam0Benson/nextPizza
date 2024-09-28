@@ -13,7 +13,7 @@ export const ProfileButton: React.FC<Props> = ({ className, onClickSignIn }) => 
   const { data: session } = useSession();
 
   return (
-    <div className={className}>
+    <div className={className}> 
       {!session ? (
         <Button onClick={onClickSignIn} variant="outline" className="flex items-center gap-1">
           <User size={16} />
