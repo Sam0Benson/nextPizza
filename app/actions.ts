@@ -1,7 +1,8 @@
 'use server';
 
 import { prisma } from '@/prisma/prisma-client';
-import { PayOrderTemplate } from '@/shared/components';
+import { PayOrderTemplate } from '@/shared/components/shared/email-temapltes';
+
 import { VerificationUserTemplate } from '@/shared/components/shared/email-temapltes/verification-user';
 import { CheckoutFormValues } from '@/shared/constants';
 import { createPayment, sendEmail } from '@/shared/lib';
@@ -103,7 +104,7 @@ export async function createOrder(data: CheckoutFormValues) {
 
     await sendEmail(
       data.email,
-      'Next Pizza / Оплатите заказ #' + order.id,
+      'Hoжы СПБ / Оплатите заказ #' + order.id,
       PayOrderTemplate({
         orderId: order.id,
         totalAmount: order.totalAmount,
@@ -156,13 +157,39 @@ export async function registerUser(body: Prisma.UserCreateInput) {
     });
 
     if (user) {
+      // Проверяем, если пользователь существует и не верифицирован
       if (!user.verified) {
-        throw new Error('Почта не подтверждена');
+        // Генерируем новый код подтверждения
+        const code = Math.floor(100000 + Math.random() * 900000).toString();
+
+        await prisma.verificationCode.upsert({
+          where: {
+            userId: user.id,
+          },
+          update: {
+            code,
+          },
+          create: {
+            code,
+            userId: user.id,
+          },
+        });
+
+        await sendEmail(
+          user.email,
+          'Ножи СПБ / 📝 Повторное подтверждение регистрации',
+          VerificationUserTemplate({
+            code,
+          }),
+        );
+
+        throw new Error('Почта не подтверждена. Новый код подтверждения отправлен.');
       }
 
-      throw new Error('Пользователь уже существует');
+      throw new Error('Пользователь уже существует и верифицирован.');
     }
 
+    // Если пользователь не найден, создаем нового
     const createdUser = await prisma.user.create({
       data: {
         fullName: body.fullName,
@@ -182,7 +209,7 @@ export async function registerUser(body: Prisma.UserCreateInput) {
 
     await sendEmail(
       createdUser.email,
-      'Next Pizza / 📝 Подтверждение регистрации',
+      'Ножи СПБ / 📝 Подтверждение регистрации',
       VerificationUserTemplate({
         code,
       }),

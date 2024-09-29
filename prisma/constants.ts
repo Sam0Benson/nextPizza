@@ -1,198 +1,146 @@
 export const categories = [
   {
-    name: 'Пиццы',
+    name: 'Складные',
   },
   {
-    name: 'Завтрак',
+    name: 'Охотничьи',
   },
   {
-    name: 'Закуски',
+    name: 'Мультитулы',
   },
   {
-    name: 'Коктейли',
+    name: 'Метательные',
   },
   {
-    name: 'Напитки',
+    name: 'Кухонные',
   },
 ];
 
 export const _ingredients = [
   {
-    name: 'Сырный бортик',
-    price: 179,
+    name: 'Чехол',
+    price: 2000,
     imageUrl:
-      'https://cdn.dodostatic.net/static/Img/Ingredients/99f5cb91225b4875bd06a26d2e842106.png',
+      'https://kizlyar-moscow.ru/image/cache/catalog/li/default/e78d6167f0ebad9fbfd9f2ebcd2678ee-710x475-product_thumb.jpeg',
   },
   {
-    name: 'Сливочная моцарелла',
-    price: 79,
+    name: 'Масло для ножей "Смажь Нож"',
+    price: 690,
     imageUrl:
-      'https://cdn.dodostatic.net/static/Img/Ingredients/cdea869ef287426386ed634e6099a5ba.png',
+      'https://img.nozhikov.ru/images/products/1/505/850027001/DSC05933-Edit.jpg',
   },
   {
-    name: 'Сыры чеддер и пармезан',
-    price: 79,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA69C1FE796',
+    name: 'Заточка',
+    price: 1290,
+    imageUrl: 'https://profi-knife.ru/wp-content/uploads/2020/05/4342rb-800x793.jpg',
   },
   {
-    name: 'Острый перец халапеньо',
-    price: 59,
+    name: 'Огниво',
+    price: 990,
     imageUrl:
-      'https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png',
+      'https://ir.ozone.ru/s3/multimedia-1-g/c1000/6968271508.jpg',
   },
   {
-    name: 'Нежный цыпленок',
-    price: 79,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA5B328D35A',
+    name: 'Компас',
+    price: 1390,
+    imageUrl: 'https://cdn1.ozone.ru/s3/multimedia-5/c600/6617448077.jpg',
   },
   {
-    name: 'Шампиньоны',
-    price: 59,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324',
+    name: 'Компактный алмазный Брусок 100х16х10, зерно 50/40-20/14',
+    price: 1590,
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/5476/514970980/DSC09432.jpg',
   },
   {
-    name: 'Ветчина',
-    price: 79,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA61B9A8D61',
-  },
-  {
-    name: 'Пикантная пепперони',
-    price: 79,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA6258199C3',
-  },
-  {
-    name: 'Острая чоризо',
-    price: 79,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA62D5D6027',
-  },
-  {
-    name: 'Маринованные огурчики',
-    price: 59,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A21DA51A81211E9EA89958D782B',
-  },
-  {
-    name: 'Свежие томаты',
-    price: 59,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA7AC1A1D67',
-  },
-  {
-    name: 'Красный лук',
-    price: 59,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA60AE6464C',
-  },
-  {
-    name: 'Сочные ананасы',
-    price: 59,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A21DA51A81211E9AFA6795BA2A0',
-  },
-  {
-    name: 'Итальянские травы',
-    price: 39,
-    imageUrl:
-      'https://cdn.dodostatic.net/static/Img/Ingredients/370dac9ed21e4bffaf9bc2618d258734.png',
-  },
-  {
-    name: 'Сладкий перец',
-    price: 59,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA63F774C1B',
-  },
-  {
-    name: 'Кубики брынзы',
-    price: 79,
-    imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA6B0FFC349',
-  },
-  {
-    name: 'Митболы',
-    price: 79,
-    imageUrl:
-      'https://cdn.dodostatic.net/static/Img/Ingredients/b2f3a5d5afe44516a93cfc0d2ee60088.png',
+    name: 'Темляк малый с бусиной "Руна", зеленый',
+    price: 1110,
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/3073/772451329/%D1%80%D1%83%D0%BD%D0%B01.jpg',
   },
 ].map((obj, index) => ({ id: index + 1, ...obj }));
 
 export const products = [
   {
-    name: 'Омлет с ветчиной и грибами',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7970321044479C1D1085457A36EB.webp',
+    name: 'Нож Honor Prime X, D2',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/2843/865028891/DSC08178-Edit.jpg',
     categoryId: 2,
   },
   {
-    name: 'Омлет с пепперони',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE94ECF33B0C46BA410DEC1B1DD6F8.webp',
+    name: 'Нож Финский Ромб',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/2773/616057557/DSC09364-Edit.jpg',
     categoryId: 2,
   },
   {
-    name: 'Кофе Латте',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D61B0C26A3F85D97A78FEEE00AD.webp',
+    name: 'Нож "Басенджи"',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/2677/821463669/DSC00711-Edit.jpg',
     categoryId: 2,
   },
   {
-    name: 'Дэнвич ветчина и сыр',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.webp',
+    name: 'Нож перочинный Victorinox Spartan',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/6199/286595127/nozh-perochinnyj-victorinox-spartan-stal-x55crmo14-rukoyat-cellidor-krasnyj-1.jpg',
     categoryId: 3,
   },
   {
-    name: 'Куриные наггетсы',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D618B5C7EC29350069AE9532C6E.webp',
+    name: 'Нож перочинный Victorinox Huntsman',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/4981/285766517/nozh-perochinnyj-victorinox-huntsman-stal-x55crmo14-rukoyat-cellidor-kamuflyazh-4.jpg',
     categoryId: 3,
   },
   {
-    name: 'Картофель из печи с соусом 🌱',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EED646A9CD324C962C6BEA78124F19.webp',
+    name: 'Мультитул HX OUTDOORS TD-03',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/847/839902031/DSC02665.jpg',
     categoryId: 3,
   },
   {
-    name: 'Додстер',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE796F96D11392A2F6DD73599921B9.webp',
+    name: 'Мультитул MQ065, 13 функций',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/4460/878276972/DSC00131-Edit.jpg',
     categoryId: 3,
   },
   {
-    name: 'Острый Додстер 🌶️🌶️',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE796FD3B594068F7A752DF8161D04.webp',
+    name: 'Нож перочинный Victorinox Climber',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/1269/284476661/nozh-perochinnyj-victorinox-climber-stal-x55crmo14-rukoyat-cellidor-krasnyj-2.jpg',
     categoryId: 3,
   },
   {
-    name: 'Банановый молочный коктейль',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EEE20B8772A72A9B60CFB20012C185.webp',
+    name: 'Спортивный нож «Профессионал-4»',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/741/669115109/DSC04930-Edit-2.jpg',
     categoryId: 4,
   },
   {
-    name: 'Карамельное яблоко молочный коктейль',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE79702E2A22E693D96133906FB1B8.webp',
+    name: 'Набор из 3 Спортивных ножей Кунай',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/4739/724316803/DSC04970-Edit.jpg',
     categoryId: 4,
   },
   {
-    name: 'Молочный коктейль с печеньем Орео',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE796FA1F50F8F8111A399E4C1A1E3.webp',
+    name: 'Спортивный нож Импульс, Kizlyar Supreme',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/7504/729824592/DSC03609.jpg',
     categoryId: 4,
   },
   {
-    name: 'Классический молочный коктейль 👶',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE796F93FB126693F96CB1D3E403FB.webp',
+    name: 'Спортивный нож Лидер',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/1716/736093876/DSC01677.jpg',
     categoryId: 4,
   },
   {
-    name: 'Ирландский Капучино',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D61999EBDA59C10E216430A6093.webp',
+    name: 'Кухонный нож универсал Tuotown',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/3382/908463414/185011.jpg',
     categoryId: 5,
   },
   {
-    name: 'Кофе Карамельный капучино',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D61AED6B6D4BFDAD4E58D76CF56.webp',
+    name: 'Сербский нож Fissman',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/391/660029831/DSC03404-Edit.jpg',
     categoryId: 5,
   },
   {
-    name: 'Кофе Кокосовый латте',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D61B19FA07090EE88B0ED347F42.webp',
+    name: 'Нож Овощной-2, сталь AUS-8',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/2728/772090536/DSC01088-Edit.jpg',
     categoryId: 5,
   },
   {
-    name: 'Кофе Американо',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D61B044583596548A59078BBD33.webp',
+    name: 'Нож "Шеф-де-Беф"',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/5389/583947533/DSC07598.jpg',
     categoryId: 5,
   },
   {
-    name: 'Кофе Латте',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D61B0C26A3F85D97A78FEEE00AD.webp',
+    name: 'Нож кухонный Kanetsune Usabagata 165 мм',
+    imageUrl: 'https://img.nozhikov.ru/images/products/1/3966/545443710/kc-361-_2_.png',
     categoryId: 5,
   },
 ];

@@ -31,14 +31,14 @@ async function up() {
         fullName: 'User Test',
         email: 'user@test.ru',
         password: hashSync('111111', 10),
-        verified: new Date(),
+        verified: true, // Здесь теперь булевое значение
         role: 'USER',
       },
       {
         fullName: 'Admin Admin',
         email: 'admin@test.ru',
         password: hashSync('111111', 10),
-        verified: new Date(),
+        verified: true, // Булевое значение
         role: 'ADMIN',
       },
     ],
@@ -58,36 +58,48 @@ async function up() {
 
   const pizza1 = await prisma.product.create({
     data: {
-      name: 'Пепперони фреш',
+      name: 'Складной нож Honor Ajax',
       imageUrl:
-        'https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp',
+        'https://img.nozhikov.ru/images/products/1/2925/789998445/DSC05498-Edit-Edit.jpg',
       categoryId: 1,
       ingredients: {
-        connect: _ingredients.slice(0, 5),
+        connect: _ingredients.slice(0, 7),
       },
     },
   });
 
   const pizza2 = await prisma.product.create({
     data: {
-      name: 'Сырная',
+      name: 'Нож Dagger',
       imageUrl:
-        'https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp',
+        'https://img.nozhikov.ru/images/products/1/4611/629502467/203678.2048x2048.jpg',
       categoryId: 1,
       ingredients: {
-        connect: _ingredients.slice(5, 10),
+        connect: _ingredients.slice(0, 7),
       },
     },
   });
 
   const pizza3 = await prisma.product.create({
     data: {
-      name: 'Чоризо фреш',
+      name: 'Складной нож Five Knives 15',
       imageUrl:
-        'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp',
+        'https://img.nozhikov.ru/images/products/1/608/855433824/DSC09909-Edit.jpg',
       categoryId: 1,
       ingredients: {
-        connect: _ingredients.slice(10, 40),
+        connect: _ingredients.slice(0, 7),
+      },
+    },
+  });
+
+  const pizza4 = await prisma.product.create({
+    data: {
+      name: 'Складной нож Five Knives 15',
+      imageUrl:
+        'https://img.nozhikov.ru/images/products/1/608/855433824/DSC09909-Edit.jpg',
+      categoryId: 1,
+      ingredients: {
+        connect: _ingredients.slice(0, 7),
       },
     },
   });
@@ -163,27 +175,27 @@ async function up() {
     data: [
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496',
+          'https://static.insales-cdn.com/r/Igx7a8HKYP0/rs:fit:1000:0:1/q:100/plain/images/products/1/6970/904469306/DSC08191.jpg@webp',
       },
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640',
+          'https://static.insales-cdn.com/images/products/1/7133/880278493/DSC08293__2_.jpg',
       },
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/quw/acz/zf5/zu37vankpngyccqvgzbohj1/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=1336215020',
+          'https://static.insales-cdn.com/images/products/1/7431/835755271/3__9_.jpg',
       },
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/7oc/5nf/ipn/oznceu2ywv82tdlnpwriyrq/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=38903958',
+          'https://static.insales-cdn.com/r/AThmZSL1O1I/rs:fit:1000:0:1/q:100/plain/images/products/1/3196/915991676/DSC09476.jpg@webp',
       },
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/q0t/flg/0ph/xt67uw7kgqe9bag7spwkkyw/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=2941222737',
+          'https://static.insales-cdn.com/r/qh75IE5DBks/rs:fit:1000:0:1/q:100/plain/images/products/1/6158/618502158/DSC03422.jpg@webp',
       },
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/lza/rsp/2gc/xrar8zdspl4saq4uajmso38/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=4207486284',
+          'https://static.insales-cdn.com/r/qK4L2mJ0YZI/rs:fit:1000:0:1/q:100/plain/images/products/1/4808/736613064/DSC09448__2_.jpg@webp',
       },
     ],
   });
@@ -193,27 +205,32 @@ async function up() {
       {
         storyId: 1,
         sourceUrl:
-          'https://cdn.inappstory.ru/file/dd/yj/sx/oqx9feuljibke3mknab7ilb35t.webp?k=IgAAAAAAAAAE',
+          'https://static.insales-cdn.com/r/Igx7a8HKYP0/rs:fit:1000:0:1/q:100/plain/images/products/1/6970/904469306/DSC08191.jpg@webp',
       },
       {
         storyId: 1,
         sourceUrl:
-          'https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE',
+          'https://static.insales-cdn.com/images/products/1/7133/880278493/DSC08293__2_.jpg',
       },
       {
         storyId: 1,
         sourceUrl:
-          'https://cdn.inappstory.ru/file/ts/p9/vq/zktyxdxnjqbzufonxd8ffk44cb.webp?k=IgAAAAAAAAAE',
+          'https://static.insales-cdn.com/images/products/1/7431/835755271/3__9_.jpg',
       },
       {
         storyId: 1,
         sourceUrl:
-          'https://cdn.inappstory.ru/file/ur/uq/le/9ufzwtpdjeekidqq04alfnxvu2.webp?k=IgAAAAAAAAAE',
+          'https://static.insales-cdn.com/r/AThmZSL1O1I/rs:fit:1000:0:1/q:100/plain/images/products/1/3196/915991676/DSC09476.jpg@webp',
       },
       {
         storyId: 1,
         sourceUrl:
-          'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
+          'https://static.insales-cdn.com/r/qh75IE5DBks/rs:fit:1000:0:1/q:100/plain/images/products/1/6158/618502158/DSC03422.jpg@webp',
+      },
+      {
+        storyId: 1,
+        sourceUrl:
+          'https://static.insales-cdn.com/r/qK4L2mJ0YZI/rs:fit:1000:0:1/q:100/plain/images/products/1/4808/736613064/DSC09448__2_.jpg@webp',
       },
     ],
   });
@@ -227,6 +244,8 @@ async function down() {
   await prisma.$executeRaw`TRUNCATE TABLE "Ingredient" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "Product" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "ProductItem" RESTART IDENTITY CASCADE`;
+  await prisma.$executeRaw`TRUNCATE TABLE "Story" RESTART IDENTITY CASCADE`;
+  await prisma.$executeRaw`TRUNCATE TABLE "StoryItem" RESTART IDENTITY CASCADE`;
 }
 
 async function main() {
